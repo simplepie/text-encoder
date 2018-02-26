@@ -1,0 +1,25 @@
+version: "3"
+services:
+    # Run the test suite in Alpine Linux
+    tests:
+        build:
+            context: .
+            dockerfile: build/tests/Dockerfile
+        volumes:
+            - ./:/var/simplepie-ng
+        ulimits:
+            nofile:
+                soft: 65535
+                hard: 100000
+
+    # Run the test suite in Alpine Linux with Xdebug enabled for code coverage
+    coverage:
+        build:
+            context: .
+            dockerfile: build/tests/Dockerfile-xdebug
+        volumes:
+            - ./:/var/simplepie-ng
+        ulimits:
+            nofile:
+                soft: 65535
+                hard: 100000
