@@ -1,4 +1,4 @@
-# SimplePie NG
+# Text Encoder
 
 | Package | SPDX | Link |
 | ------- | ---- | ---- |

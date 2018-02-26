@@ -24,6 +24,6 @@ COPY build/tests/php.ini /usr/local/etc/php/php.ini
 # Set To non root user
 USER www-data
 
-WORKDIR /var/simplepie-ng
+WORKDIR /var/text-encoder
 
 ENTRYPOINT ["make", "test"]
