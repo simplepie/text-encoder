@@ -2,7 +2,7 @@
 
 | Package | SPDX | Link |
 | ------- | ---- | ---- |
-| Text Encoder | Apache-2.0 | <https://github.com/simplepie/text-encoder/blob/master/LICENSE.md> |
+| Text Encoder | BSD-3-Clause | <https://github.com/simplepie/text-encoder/blob/master/LICENSE.md> |
 
 # Runtime Dependencies
 
@@ -14,7 +14,6 @@
 
 | Package | SPDX | Link |
 | ------- | ---- | ---- |
-| Feedparser test cases | BSD-2-Clause | <https://github.com/kurtmckee/feedparser/blob/develop/LICENSE> |
 | Monolog | MIT | <https://github.com/Seldaek/monolog/blob/master/LICENSE> |
 | PDepend | BSD-3-Clause | <https://github.com/pdepend/pdepend/blob/master/LICENSE> |
 | PHP Code Analyzer | BSD-3-Clause | <https://github.com/wapmorgan/PhpCodeAnalyzer/blob/master/LICENSE.md> |
