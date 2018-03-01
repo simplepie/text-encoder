@@ -142,6 +142,47 @@ class Locale
             self::asUnicode()
         );
     }
+
+    /**
+     * These are the most common non-Unicode character encodings for
+     * North and South Korea. More often, ISO-2022-KR will be selected
+     * over EUC-KR.
+     *
+     * @return array
+     */
+    public static function asIso8859(): array
+    {
+        return \array_merge(
+            self::asUnicode(),
+            [
+                Encoding::ISO_8859_16,
+                Encoding::WINDOWS_1252,
+                Encoding::CP850,
+                Encoding::ISO_8859_15,
+                Encoding::ISO_8859_14,
+                Encoding::WINDOWS_1257,
+                Encoding::ISO_8859_13,
+                Encoding::ISO_8859_11,
+                Encoding::ISO_8859_10,
+                Encoding::WINDOWS_1254,
+                Encoding::ISO_8859_9,
+                Encoding::WINDOWS_1255,
+                Encoding::ISO_8859_8,
+                Encoding::WINDOWS_1253,
+                Encoding::ISO_8859_7,
+                Encoding::WINDOWS_1256,
+                Encoding::ISO_8859_6,
+                Encoding::WINDOWS_1251,
+                Encoding::ISO_8859_5,
+                Encoding::ISO_8859_4,
+                Encoding::ISO_8859_3,
+                Encoding::WINDOWS_1250,
+                Encoding::ISO_8859_2,
+                Encoding::ISO_8859_1,
+                Encoding::WINDOWS_1258,
+            ]
+        );
+    }
 }
 
 
@@ -150,4 +191,3 @@ class Locale
 
 
 // Encoding::CP866, // Russian
-// Encoding::CP850, // Windows-1252
