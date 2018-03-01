@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace TextEncoder\Test\Integration;
 
+use PHPUnit\Framework\TestCase;
+
 abstract class AbstractTestCase extends TestCase
 {
 }

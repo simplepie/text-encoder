@@ -14,12 +14,8 @@ namespace TextEncoder;
 use TextEncoder\Enum\Encoding;
 use TextEncoder\Util\Convert;
 
-class TextEncoder implements TextEncoderInterface
+interface TextEncoderInterface
 {
-    private function __construct()
-    {
-    }
-
     /**
      * Detect the current current character encoding of a string.
      *
@@ -29,14 +25,7 @@ class TextEncoder implements TextEncoderInterface
      *
      * @return string
      */
-    public static function detectEncoding(string $detect, ?array $encodingList = null): string
-    {
-        $encodingList = $encodingList ?: \array_values(
-            Encoding::introspect()
-        );
-
-        return \mb_detect_encoding($detect, $encodingList, true);
-    }
+    public static function detectEncoding(string $detect, ?array $encodingList = null): string;
 
     /**
      * Convert the string to UTF-8.
@@ -46,8 +35,5 @@ class TextEncoder implements TextEncoderInterface
      *
      * @return string
      */
-    public static function toUtf8(string $string, string $fromEncoding): string
-    {
-        return Convert::convertEncoding($string, $fromEncoding, Encoding::UTF8);
-    }
+    public static function toUtf8(string $string, string $fromEncoding): string;
 }
