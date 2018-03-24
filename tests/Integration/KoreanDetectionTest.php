@@ -46,30 +46,4 @@ class KoreanDetectionTest extends AbstractTestCase
             )
         );
     }
-
-    public function testKoreanMac(): void
-    {
-        $data = \file_get_contents(__DIR__ . '/data/korean-mac.txt');
-
-        $this->assertEquals(
-            Encoding::EUC_KR,
-            TextEncoder::detectEncoding(
-                $data,
-                Locale::asKorean()
-            )
-        );
-    }
-
-    public function testKoreanWindows(): void
-    {
-        $data = \file_get_contents(__DIR__ . '/data/korean-win.txt');
-
-        $this->assertEquals(
-            Encoding::EUC_KR,
-            TextEncoder::detectEncoding(
-                $data,
-                Locale::asKorean()
-            )
-        );
-    }
 }
