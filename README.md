@@ -1,3 +1,7 @@
+<div align="center"><img src="https://raw.githubusercontent.com/simplepie/.github/master/logo.png" width="500"><br></div>
+
+----
+
 # TextEncoder
 
 An implementation of the [WHATWG Encoding Specification](https://encoding.spec.whatwg.org) in PHP.
