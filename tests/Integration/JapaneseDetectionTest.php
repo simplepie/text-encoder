@@ -1,10 +1,9 @@
 <?php
 /**
- * Copyright (c) 2004-2009, 2018 Ryan Parman <http://ryanparman.com>
- * Copyright (c) 2005-2010 Geoffrey Sneddon <http://gsnedders.com>
- * Copyright (c) 2004-2018 Contributors.
+ * Copyright (c) 2018-2019 Ryan Parman <http://ryanparman.com>
+ * Copyright (c) 2018-2019 Contributors
  *
- * https://opensource.org/licenses/BSD-3-Clause
+ * http://opensource.org/licenses/Apache2.0
  */
 
 declare(strict_types=1);
@@ -21,7 +20,7 @@ class JapaneseDetectionTest extends AbstractTestCase
     {
         $data = \file_get_contents(__DIR__ . '/data/euc-jp.txt');
 
-        $this->assertEquals(
+        static::assertEquals(
             Encoding::EUC_JP,
             TextEncoder::detectEncoding(
                 $data,
@@ -34,7 +33,7 @@ class JapaneseDetectionTest extends AbstractTestCase
     {
         $data = \file_get_contents(__DIR__ . '/data/iso-2022-jp.txt');
 
-        $this->assertEquals(
+        static::assertEquals(
             Encoding::ISO_2022_JP,
             TextEncoder::detectEncoding(
                 $data,
@@ -47,7 +46,7 @@ class JapaneseDetectionTest extends AbstractTestCase
     {
         $data = \file_get_contents(__DIR__ . '/data/sjis-mac.txt');
 
-        $this->assertEquals(
+        static::assertEquals(
             Encoding::SJIS,
             TextEncoder::detectEncoding(
                 $data,
@@ -60,7 +59,7 @@ class JapaneseDetectionTest extends AbstractTestCase
     {
         $data = \file_get_contents(__DIR__ . '/data/sjis-win.txt');
 
-        $this->assertEquals(
+        static::assertEquals(
             Encoding::SJIS,
             TextEncoder::detectEncoding(
                 $data,
@@ -73,7 +72,7 @@ class JapaneseDetectionTest extends AbstractTestCase
     {
         $data = \file_get_contents(__DIR__ . '/data/shift-jis.txt');
 
-        $this->assertEquals(
+        static::assertEquals(
             Encoding::SJIS,
             TextEncoder::detectEncoding(
                 $data,

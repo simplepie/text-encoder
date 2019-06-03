@@ -1,10 +1,9 @@
 <?php
 /**
- * Copyright (c) 2004-2009, 2018 Ryan Parman <http://ryanparman.com>
- * Copyright (c) 2005-2010 Geoffrey Sneddon <http://gsnedders.com>
- * Copyright (c) 2004-2018 Contributors.
+ * Copyright (c) 2018-2019 Ryan Parman <http://ryanparman.com>
+ * Copyright (c) 2018-2019 Contributors
  *
- * https://opensource.org/licenses/BSD-3-Clause
+ * http://opensource.org/licenses/Apache2.0
  */
 
 declare(strict_types=1);
@@ -22,7 +21,7 @@ class ChineseDetectionTest extends AbstractTestCase
         $data = \file_get_contents(__DIR__ . '/data/gb-18030.txt');
 
         // All of the GB* Chinese encodings appear to be subsets of GB18030.
-        $this->assertEquals(
+        static::assertEquals(
             Encoding::GB18030,
             TextEncoder::detectEncoding(
                 $data,
@@ -36,7 +35,7 @@ class ChineseDetectionTest extends AbstractTestCase
         $data = \file_get_contents(__DIR__ . '/data/gb-2312.txt');
 
         // All of the GB* Chinese encodings appear to be subsets of GB18030.
-        $this->assertEquals(
+        static::assertEquals(
             Encoding::GB18030,
             TextEncoder::detectEncoding(
                 $data,
@@ -50,7 +49,7 @@ class ChineseDetectionTest extends AbstractTestCase
         $data = \file_get_contents(__DIR__ . '/data/gbk.txt');
 
         // All of the GB* Chinese encodings appear to be subsets of GB18030.
-        $this->assertEquals(
+        static::assertEquals(
             Encoding::GB18030,
             TextEncoder::detectEncoding(
                 $data,

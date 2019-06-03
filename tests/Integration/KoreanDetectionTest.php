@@ -1,10 +1,9 @@
 <?php
 /**
- * Copyright (c) 2004-2009, 2018 Ryan Parman <http://ryanparman.com>
- * Copyright (c) 2005-2010 Geoffrey Sneddon <http://gsnedders.com>
- * Copyright (c) 2004-2018 Contributors.
+ * Copyright (c) 2018-2019 Ryan Parman <http://ryanparman.com>
+ * Copyright (c) 2018-2019 Contributors
  *
- * https://opensource.org/licenses/BSD-3-Clause
+ * http://opensource.org/licenses/Apache2.0
  */
 
 declare(strict_types=1);
@@ -21,7 +20,7 @@ class KoreanDetectionTest extends AbstractTestCase
     {
         $data = \file_get_contents(__DIR__ . '/data/euc-kr.txt');
 
-        $this->assertEquals(
+        static::assertEquals(
             Encoding::EUC_KR,
             TextEncoder::detectEncoding(
                 $data,
@@ -38,7 +37,7 @@ class KoreanDetectionTest extends AbstractTestCase
         // it as EUC-KR due to their ordering. EUC-KR is the most popular
         // non-Unicode encoding in Korean software, therefore it receives first
         // position.
-        $this->assertEquals(
+        static::assertEquals(
             Encoding::EUC_KR,
             TextEncoder::detectEncoding(
                 $data,

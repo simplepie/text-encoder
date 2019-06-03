@@ -1,10 +1,9 @@
 <?php
 /**
- * Copyright (c) 2004-2009, 2018 Ryan Parman <http://ryanparman.com>
- * Copyright (c) 2005-2010 Geoffrey Sneddon <http://gsnedders.com>
- * Copyright (c) 2004-2018 Contributors.
+ * Copyright (c) 2018-2019 Ryan Parman <http://ryanparman.com>
+ * Copyright (c) 2018-2019 Contributors
  *
- * https://opensource.org/licenses/BSD-3-Clause
+ * http://opensource.org/licenses/Apache2.0
  */
 
 declare(strict_types=1);
@@ -23,8 +22,6 @@ class Convert
      * @param string $string       The string to convert to UTF-8.
      * @param string $fromEncoding The current character encoding of the string.
      * @param string $toEncoding   The desired character encoding for the string.
-     *
-     * @return string|null
      */
     public static function convertEncoding(string $string, string $fromEncoding, string $toEncoding): ?string
     {
@@ -61,8 +58,6 @@ class Convert
      * Converts a unicode codepoint to a UTF-8 character.
      *
      * @param int $codepoint Unicode codepoint.
-     *
-     * @return string
      */
     public static function codepointToUtf8(int $codepoint): string
     {
@@ -102,8 +97,6 @@ class Convert
      * @param string $string       The string to convert to UTF-8.
      * @param string $fromEncoding The current character encoding of the string.
      * @param string $toEncoding   The desired character encoding for the string.
-     *
-     * @return string|null
      */
     public static function withMbstring(string $string, string $fromEncoding, string $toEncoding): ?string
     {
@@ -142,8 +135,6 @@ class Convert
      * @param string $string       The string to convert to UTF-8.
      * @param string $fromEncoding The current character encoding of the string.
      * @param string $toEncoding   The desired character encoding for the string.
-     *
-     * @return string
      */
     public static function withUconverter(string $string, string $fromEncoding, string $toEncoding): string
     {
@@ -154,8 +145,6 @@ class Convert
      * Converts a Windows-1252/ISO-8859-1 encoded string to a UTF-8 encoded string.
      *
      * @param string $string Windows-1252/ISO-8859-1 encoded string.
-     *
-     * @return string
      */
     public static function windows1252ToUtf8(string $string): string
     {

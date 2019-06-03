@@ -1,10 +1,9 @@
 <?php
 /**
- * Copyright (c) 2004-2009, 2018 Ryan Parman <http://ryanparman.com>
- * Copyright (c) 2005-2010 Geoffrey Sneddon <http://gsnedders.com>
- * Copyright (c) 2004-2018 Contributors.
+ * Copyright (c) 2018-2019 Ryan Parman <http://ryanparman.com>
+ * Copyright (c) 2018-2019 Contributors
  *
- * https://opensource.org/licenses/BSD-3-Clause
+ * http://opensource.org/licenses/Apache2.0
  */
 
 declare(strict_types=1);
@@ -21,8 +20,6 @@ class Locale
 
     /**
      * These are the standard Unicode family of encodings that are supported.
-     *
-     * @return array
      */
     public static function asUnicode(): array
     {
@@ -45,8 +42,6 @@ class Locale
 
     /**
      * These are the most common non-Unicode Japanese character encodings.
-     *
-     * @return array
      */
     public static function asJapanese(): array
     {
@@ -73,8 +68,6 @@ class Locale
     /**
      * These are the most common non-Unicode character encodings for
      * The People's Republic of China (PRC; Mainland China).
-     *
-     * @return array
      */
     public static function asSimplifiedChinese(): array
     {
@@ -92,8 +85,6 @@ class Locale
     /**
      * These are the most common non-Unicode character encodings for
      * The Republic of China (ROC; Taiwan).
-     *
-     * @return array
      */
     public static function asTraditionalChinese(): array
     {
@@ -111,8 +102,6 @@ class Locale
      * These are a blend of both Simplified and Traditional Chinese encodings.
      * The Simplified is first and Traditional is second, only because of the
      * worldwide number of users.
-     *
-     * @return array
      */
     public static function asChinese(): array
     {
@@ -128,8 +117,6 @@ class Locale
      * These are the most common non-Unicode character encodings for
      * North and South Korea. More often, ISO-2022-KR will be selected
      * over EUC-KR.
-     *
-     * @return array
      */
     public static function asKorean(): array
     {
@@ -147,8 +134,6 @@ class Locale
      * These are the most common non-Unicode character encodings for
      * North and South Korea. More often, ISO-2022-KR will be selected
      * over EUC-KR.
-     *
-     * @return array
      */
     public static function asIso8859(): array
     {
@@ -184,10 +169,5 @@ class Locale
         );
     }
 }
-
-
-
-
-
 
 // Encoding::CP866, // Russian

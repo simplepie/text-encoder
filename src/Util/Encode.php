@@ -1,10 +1,9 @@
 <?php
 /**
- * Copyright (c) 2004-2009, 2018 Ryan Parman <http://ryanparman.com>
- * Copyright (c) 2005-2010 Geoffrey Sneddon <http://gsnedders.com>
- * Copyright (c) 2004-2018 Contributors.
+ * Copyright (c) 2018-2019 Ryan Parman <http://ryanparman.com>
+ * Copyright (c) 2018-2019 Contributors
  *
- * https://opensource.org/licenses/BSD-3-Clause
+ * http://opensource.org/licenses/Apache2.0
  */
 
 declare(strict_types=1);
@@ -26,8 +25,6 @@ class Encode
      * Normalizes the name of the character encoding to a simpler set.
      *
      * @param string $charset The original name of the character encoding.
-     *
-     * @return string
      *
      * @phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */
