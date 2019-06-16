@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace TextEncoder\Enum;
 
+use SimplePie\UtilityPack\Enum\AbstractEnum;
+
 class Encoding extends AbstractEnum
 {
     /**
