@@ -20,6 +20,7 @@ class EncodeTest extends AbstractTestCase
         static::assertSame('US-ASCII', Encode::normalize('US-ASCII'));
         static::assertSame('windows-1252', Encode::normalize('latin1'));
         static::assertSame('Shift_JIS', Encode::normalize('Windows-31J'));
+        static::assertSame('GBK', Encode::normalize('CS-GB-2312'));
     }
 
     public function testFailed(): void
