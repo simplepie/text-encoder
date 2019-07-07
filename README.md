@@ -57,6 +57,7 @@ Once we have high confidence in the _input_ encoding, converting to UTF-8 become
 
 * [UTS #22: Unicode Character Mapping Markup Language, §1.4: Charset Alias Matching](https://www.unicode.org/reports/tr22/tr22-8.html)
 * [Extensible Markup Language (XML) 1.0 (Fifth Edition), Appendix F.1: “Detection Without External Encoding Information”](https://www.w3.org/TR/xml/#sec-guessing-no-ext-info)
+* [RFC 3023: XML Media Types](https://tools.ietf.org/html/rfc3023)
 * [HTML Living Standard: Determining the Character Encoding](https://html.spec.whatwg.org/multipage/parsing.html#determining-the-character-encoding)
 * [Encoding Living Standard](https://encoding.spec.whatwg.org)
 * [BCP-47: Tags for Identifying Languages](https://tools.ietf.org/html/bcp47)
