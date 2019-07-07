@@ -152,6 +152,7 @@ foreach ($rawDocument as $encodings) {
 
 // Customize
 $registry['ascii']   = 'US-ASCII';
+$registry['euckr']   = 'windows-949';
 $registry['usascii'] = 'US-ASCII';
 
 foreach ($registry as $k => $v) {

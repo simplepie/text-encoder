@@ -8,13 +8,23 @@
 
 declare(strict_types=1);
 
-namespace TextEncoder\Test\Unit;
+namespace TextEncoder\Test\Unit\Util;
 
-use PHPUnit\Framework\TestCase;
+use TextEncoder\Test\Unit\AbstractTestCase;
+use TextEncoder\Util\Encode;
 
-abstract class EncodeTest extends TestCase
+class EncodeTest extends AbstractTestCase
 {
-    protected function setUp(): void
+    public function testLookup(): void
     {
+        static::assertSame('US-ASCII', Encode::normalize('US-ASCII'));
+        static::assertSame('windows-1252', Encode::normalize('latin1'));
+        static::assertSame('Shift_JIS', Encode::normalize('Windows-31J'));
+        static::assertSame('GBK', Encode::normalize('CS-GB-2312'));
+    }
+
+    public function testFailed(): void
+    {
+        static::assertSame('x-user-defined', Encode::normalize('Something that doesn\'t exist'));
     }
 }

@@ -52,7 +52,7 @@ class XmlDeclarationParser
      *
      * @var int
      */
-    public $data_length = 0;
+    public $dataLength = 0;
 
     /**
      * Current position of the pointer.
@@ -68,8 +68,8 @@ class XmlDeclarationParser
      */
     public function __construct($data)
     {
-        $this->data        = $data;
-        $this->data_length = \mb_strlen($this->data);
+        $this->data       = $data;
+        $this->dataLength = \mb_strlen($this->data);
     }
 
     /**
@@ -106,7 +106,7 @@ class XmlDeclarationParser
      */
     public function hasData(): bool
     {
-        return $this->position < $this->data_length;
+        return $this->position < $this->dataLength;
     }
 
     /**

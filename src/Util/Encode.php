@@ -13,7 +13,7 @@ namespace TextEncoder\Util;
 /**
  * Pulled from the IANA and WHATWG official character encoding alias lists.
  *
- * DO NOT EDIT MANUALLY. This code was automatically generated with `make encode` at 2019-07-07T04:48:20Z.
+ * DO NOT EDIT MANUALLY. This code was automatically generated with `make encode` at 2019-07-07T05:32:02Z.
  *
  * @see https://www.iana.org/assignments/character-sets/character-sets.xml
  * @see https://encoding.spec.whatwg.org/encodings.json
@@ -174,7 +174,7 @@ class Encode
         'csebcdicuk'                              => 'EBCDIC-UK',
         'csebcdicus'                              => 'EBCDIC-US',
         'cseucfixwidjapanese'                     => 'Extended_UNIX_Code_Fixed_Width_for_Japanese',
-        'cseuckr'                                 => 'EUC-KR',
+        'cseuckr'                                 => 'windows-949',
         'cseucpkdfmtjapanese'                     => 'EUC-JP',
         'csgb2312'                                => 'GBK',
         'csgb18030'                               => 'gb18030',
@@ -339,7 +339,7 @@ class Encode
         'cskoi8r'                                 => 'KOI8-R',
         'cskoi8u'                                 => 'KOI8-U',
         'csksc5636'                               => 'KSC5636',
-        'csksc56011987'                           => 'EUC-KR',
+        'csksc56011987'                           => 'windows-949',
         'cskz1048'                                => 'KZ-1048',
         'csmacintosh'                             => 'macintosh',
         'csmicrosoftpublishing'                   => 'Microsoft-Publishing',
@@ -727,7 +727,7 @@ class Encode
         'isoir146'                                => 'JUS_I.B1.003-serb',
         'isoir147'                                => 'JUS_I.B1.003-mac',
         'isoir148'                                => 'windows-1254',
-        'isoir149'                                => 'EUC-KR',
+        'isoir149'                                => 'windows-949',
         'isoir150'                                => 'greek-ccitt',
         'isoir151'                                => 'NC_NC00-10:81',
         'isoir152'                                => 'ISO_6937-2-25',
@@ -779,11 +779,11 @@ class Encode
         'koi8r'                                   => 'KOI8-R',
         'koi8ru'                                  => 'KOI8-U',
         'koi8u'                                   => 'KOI8-U',
-        'korean'                                  => 'EUC-KR',
-        'ksc5601'                                 => 'EUC-KR',
+        'korean'                                  => 'windows-949',
+        'ksc5601'                                 => 'windows-949',
         'ksc5636'                                 => 'KSC5636',
-        'ksc56011987'                             => 'EUC-KR',
-        'ksc56011989'                             => 'EUC-KR',
+        'ksc56011987'                             => 'windows-949',
+        'ksc56011989'                             => 'windows-949',
         'kz1048'                                  => 'KZ-1048',
         'l1'                                      => 'windows-1252',
         'l2'                                      => 'ISO-8859-2',
