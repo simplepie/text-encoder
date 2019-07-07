@@ -77,6 +77,11 @@ install-hooks:
 	printf '#!/usr/bin/env bash\nmake lint\nmake test' > .git/hooks/pre-commit
 	chmod +x .git/hooks/pre-commit
 
+.PHONY: encode
+encode:
+	mkdir -p resources/
+	wget -O resources/character-sets.xml https://www.iana.org/assignments/character-sets/character-sets.xml
+
 #-------------------------------------------------------------------------------
 # Documentation tasks
 

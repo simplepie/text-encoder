@@ -10,6 +10,13 @@ An implementation of the [WHATWG Encoding Specification](https://encoding.spec.w
 
 We agree with this statement. The goal of this project is to detect the current encoding of a string or document. If it isn't UTF-8, make it easy to convert to UTF-8.
 
+![](docs/bart-utf8.png)
+
+* [Unicode Technical Standard #22: Unicode Character Mapping Markup Language](https://www.unicode.org/reports/tr22/tr22-8.html)
+* [HTML Living Standard: Determining the Character Encoding](https://html.spec.whatwg.org/multipage/parsing.html#determining-the-character-encoding)
+* [Encoding Living Standard](https://encoding.spec.whatwg.org)
+* [BCP-47: Tags for Identifying Languages](https://tools.ietf.org/html/bcp47)
+
 ## Badges
 
 ### Health
