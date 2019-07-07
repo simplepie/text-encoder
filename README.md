@@ -39,11 +39,9 @@ We agree with this statement. The goal of this project is to detect the current 
 
 [![License](https://img.shields.io/github/license/simplepie/text-encoder.svg?style=for-the-badge)](https://github.com/simplepie/text-encoder/blob/master/LICENSE.md)
 
-## Specifications
+## Workflow
 
 ![](docs/bart-utf8.png)
-
-### Workflow
 
 Before we can convert content to UTF-8, we first need to understand the _current_ character encoding so that we know what we need to convert _from_. In order to determine this, we rely on a few specific signals:
 
@@ -54,6 +52,8 @@ Before we can convert content to UTF-8, we first need to understand the _current
 Since character encodings can be fairly esoteric, and a understanding of encodings is limited, it is common that an HTTP response or XML prologue will _lie_ about their encoding. As such, while they _may_ be helpful, _content sniffing_ provides the most confident results.
 
 Once we have high confidence in the _input_ encoding, converting to UTF-8 becomes trivial.
+
+## Specifications
 
 ### [UTS #22](https://www.unicode.org/reports/tr22/tr22-8.html): Unicode Character Mapping Markup Language
 
