@@ -150,6 +150,21 @@ foreach ($rawDocument as $encodings) {
 
 //------------------------------------------------------------------------------
 
+$newRegistry    = \array_unique(\array_values($registry));
+$knownEncodings = \array_flip(\mb_list_encodings());
+
+foreach ($newRegistry as $enc) {
+    if (isset($knownEncodings[$enc])) {
+        $aliases = \mb_encoding_aliases($enc);
+
+        foreach ($aliases as $alias) {
+            $registry[normalize_character_set($alias)] = $enc;
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+
 // Customize
 $registry['ascii']   = 'US-ASCII';
 $registry['euckr']   = 'windows-949';

@@ -13,7 +13,7 @@ namespace TextEncoder\Util;
 /**
  * Pulled from the IANA and WHATWG official character encoding alias lists.
  *
- * DO NOT EDIT MANUALLY. This code was automatically generated with `make encode` at 2019-07-07T05:32:02Z.
+ * DO NOT EDIT MANUALLY. This code was automatically generated with `make encode` at 2019-07-07T20:14:55Z.
  *
  * @see https://www.iana.org/assignments/character-sets/character-sets.xml
  * @see https://encoding.spec.whatwg.org/encodings.json
@@ -177,7 +177,7 @@ class Encode
         'cseuckr'                                 => 'windows-949',
         'cseucpkdfmtjapanese'                     => 'EUC-JP',
         'csgb2312'                                => 'GBK',
-        'csgb18030'                               => 'gb18030',
+        'csgb18030'                               => 'GB18030',
         'csgbk'                                   => 'GBK',
         'cshalfwidthkatakana'                     => 'JIS_X0201',
         'cshpdesktop'                             => 'HP-DeskTop',
@@ -381,7 +381,7 @@ class Encode
         'csusdk'                                  => 'us-dk',
         'csutf7'                                  => 'UTF-7',
         'csutf8'                                  => 'UTF-8',
-        'csutf16'                                 => 'UTF-16LE',
+        'csutf16'                                 => 'UTF-16',
         'csutf16be'                               => 'UTF-16BE',
         'csutf16le'                               => 'UTF-16LE',
         'csutf32'                                 => 'UTF-32',
@@ -481,6 +481,7 @@ class Encode
         'elot928'                                 => 'ISO-8859-7',
         'es'                                      => 'ES',
         'es2'                                     => 'ES2',
+        'euc'                                     => 'EUC-JP',
         'eucjp'                                   => 'EUC-JP',
         'euckr'                                   => 'EUC-KR',
         'extendedunixcodefixedwidthforjapanese'   => 'Extended_UNIX_Code_Fixed_Width_for_Japanese',
@@ -489,9 +490,10 @@ class Encode
         'fr'                                      => 'NF_Z_62-010',
         'gb'                                      => 'BS_4730',
         'gb2312'                                  => 'GBK',
-        'gb18030'                                 => 'gb18030',
+        'gb18030'                                 => 'GB18030',
         'gb198880'                                => 'GB_1988-80',
         'gb231280'                                => 'GBK',
+        'gb180302000'                             => 'GB18030',
         'gbk'                                     => 'GBK',
         'gost1976874'                             => 'GOST_19768-74',
         'greek'                                   => 'ISO-8859-7',
@@ -872,7 +874,7 @@ class Encode
         'usdk'                                    => 'us-dk',
         'utf7'                                    => 'UTF-7',
         'utf8'                                    => 'UTF-8',
-        'utf16'                                   => 'UTF-16LE',
+        'utf16'                                   => 'UTF-16',
         'utf16be'                                 => 'UTF-16BE',
         'utf16le'                                 => 'UTF-16LE',
         'utf32'                                   => 'UTF-32',
@@ -912,6 +914,7 @@ class Encode
         'xcp1257'                                 => 'windows-1257',
         'xcp1258'                                 => 'windows-1258',
         'xeucjp'                                  => 'EUC-JP',
+        'xeuckr'                                  => 'EUC-KR',
         'xgbk'                                    => 'GBK',
         'xmaccyrillic'                            => 'x-mac-cyrillic',
         'xmacroman'                               => 'macintosh',
