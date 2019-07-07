@@ -24,3 +24,5 @@
 | phpcpd | BSD-3-Clause | <https://github.com/sebastianbergmann/phpcpd/blob/master/LICENSE> |
 | phploc | BSD-3-Clause | <https://github.com/sebastianbergmann/phploc/blob/master/LICENSE> |
 | PHPUnit | BSD-3-Clause | <https://github.com/sebastianbergmann/phpunit/blob/master/LICENSE> |
+
+`resources/convrtrs.txt` was pulled from http://source.icu-project.org/repos/icu/icu/tags/release-58-1/source/data/mappings/convrtrs.txt, copyright (c) IBM and Unicode.

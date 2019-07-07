@@ -1,0 +1,46 @@
+<?php
+declare(strict_types=1);
+
+namespace TextEncoder\Util;
+
+/**
+ * Pulled from the IANA and WHATWG official character encoding alias lists.
+ *
+ * DO NOT EDIT MANUALLY. This code was automatically generated with `make encode` at {{ timestamp() }}.
+ *
+ * @see https://www.iana.org/assignments/character-sets/character-sets.xml
+ * @see https://encoding.spec.whatwg.org/encodings.json
+ */
+class Encode
+{
+    private static $encodings = [
+{% for alias, encoding in encodings %}
+        "{{ alias | raw }}" => "{{ encoding | raw }}",
+{% endfor %}
+    ];
+
+    /**
+     * No construction of an instance. Static functions, only.
+     */
+    private function __construct()
+    {
+    }
+
+    /**
+     * Normalizes the name of the character encoding to a simpler set.
+     *
+     * @param string $charset The original name of the character encoding.
+     */
+    public static function normalize(string $charset): string
+    {
+        // UTS #22, Unicode Character Mapping Markup Language, §1.4: Charset Alias Matching
+        // https://www.unicode.org/reports/tr22/tr22-8.html
+        $cs = \mb_strtolower(\preg_replace('/(?:[^a-zA-Z0-9]+|([^0-9])0+)/', '\1', $charset));
+
+        if (isset(static::$encodings[$cs])) {
+            return static::$encodings[$cs];
+        }
+
+        return 'x-user-defined';
+    }
+}

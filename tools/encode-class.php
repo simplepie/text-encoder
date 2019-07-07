@@ -2,19 +2,45 @@
 <?php
 declare(strict_types=1);
 
-function normalize_character_set(DOMNode $cs): string
+require_once \dirname(__DIR__) . '/vendor/autoload.php';
+
+// Twig bootstrapping
+$loader = new Twig_Loader_Filesystem(__DIR__ . '/templates');
+$twig   = new Twig_Environment($loader, [
+    'debug'            => true,
+    'charset'          => 'utf-8',
+    'cache'            => '/tmp',
+    'auto_reload'      => true,
+    'strict_variables' => true,
+    'optimizations'    => -1,
+]);
+$twig->addExtension(new Twig_Extension_Debug());
+
+$twig->addFunction(new Twig_Function('timestamp', static function () {
+    return \str_replace('+00:00', 'Z', \gmdate(\DATE_ATOM));
+}));
+
+//------------------------------------------------------------------------------
+
+function normalize_character_set($cs): string
 {
-    $cs = \trim($cs->nodeValue);
+    if ($cs instanceof DOMNode) {
+        $cs = $cs->nodeValue;
+    }
+
+    $cs = \trim($cs);
     \preg_match('/^([^\s]+)/S', $cs, $m);
     $cs = \preg_replace('/(?:[^a-zA-Z0-9]+|([^0-9])0+)/', '$1', $m[1]);
 
     return \mb_strtolower($cs);
 }
 
+//------------------------------------------------------------------------------
+
 \define('NS', 'http://www.iana.org/assignments');
 
 // Read file into memory
-$rawDocument = \file_get_contents(\dirname(__DIR__) . '/resources/character-sets.xml');
+$rawDocument = \file_get_contents(\dirname(__DIR__) . '/resources/iana-character-sets.xml');
 
 // DOMDocument
 $domDocument = new DOMDocument('1.0', 'utf-8');
@@ -106,27 +132,48 @@ foreach ($records as $record) {
     }
 }
 
-// Customizations
-$customize = [
-    'Shift_JIS' => [
-        'SJIS',
-    ],
-    'US-ASCII' => [
-        'ascii',
-    ],
-];
+//------------------------------------------------------------------------------
+
+// Read file into memory
+$rawDocument = \file_get_contents(\dirname(__DIR__) . '/resources/whatwg-encodings.json');
+$rawDocument = \json_decode($rawDocument, true);
+
+foreach ($rawDocument as $encodings) {
+    foreach ($encodings['encodings'] as $set) {
+        if ('replacement' !== $set['name']) {
+            foreach ($set['labels'] as $label) {
+                $registry[normalize_character_set($label)] = $set['name'];
+            }
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+
+// Customize
+$registry['ascii']   = 'US-ASCII';
+$registry['usascii'] = 'US-ASCII';
+
+foreach ($registry as $k => $v) {
+    if (isset($registry[normalize_character_set($v)])) {
+        $registry[$k] = $registry[normalize_character_set($v)];
+    }
+}
 
 // Alphabetize the hashmap for readability
 \uksort($registry, 'strnatcasecmp');
 
-\print_r($registry);
+//-------------------------------------------------------------------------------
+// Entity.php
 
-// 'EUC-KR'         => 'windows-949',
-// 'GB2312'         => 'GBK',
-// 'GB_2312-80'     => 'GBK',
-// 'ISO-8859-1'     => 'windows-1252',
-// 'ISO-8859-9'     => 'windows-1254',
-// 'ISO-8859-11'    => 'windows-874',
-// 'KS_C_5601-1987' => 'windows-949',
-// 'Shift_JIS'      => 'Windows-31J',
-// 'TIS-620'        => 'windows-874',
+$template = $twig->load('Encode.php.twig');
+$output   = $template->render([
+    'encodings' => $registry,
+]);
+
+$writePath = \sprintf(
+    '%s/Encode.php',
+    \dirname(__DIR__) . '/src/Util'
+);
+
+\file_put_contents($writePath, $output);

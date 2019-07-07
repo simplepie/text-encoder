@@ -28,26 +28,12 @@ Once we have high confidence in the _input_ encoding, converting to UTF-8 become
 
 ## Specifications
 
-### [UTS #22](https://www.unicode.org/reports/tr22/tr22-8.html): Unicode Character Mapping Markup Language
-
-From §1.4: _Charset Alias Matching_
-
-> Names and aliases of charsets are often spelled with small variations. To recognize accidental but unambiguous misspellings and avoid adding each possible variation to a list of recognized names, it is customary to match names case-insensitively and to ignore some punctuation. For best results, names should be compared after applying the following transformations:
->
-> 1. Delete all characters except a-z, A-Z, and 0-9.
-> 1. Map uppercase A-Z to the corresponding lowercase a-z.
-> 1. From left to right, delete each 0 that is not preceded by a digit.
->
-> For example, the following names should match: "UTF-8", "utf8", "u.t.f-008", but not "utf-80" or "ut8".
->
-> **Note:** These rules are in place because in practice implementations are faced with many gratuitous variations in the use and omission of punctuation. There are a small number of IANA names for different charsets that match under these rules, but they appear to be rarely used, obscure charsets: "iso-ir-9-1" and "iso-ir-9-2" match "iso-ir-91" and "iso-ir-92", respectively. (There are also names in the IANA charset registry that violate the registry's own name syntax rules.)
-
-
-### See also…
-
+* [UTS #22: Unicode Character Mapping Markup Language, §1.4: Charset Alias Matching](https://www.unicode.org/reports/tr22/tr22-8.html)
+* [Extensible Markup Language (XML) 1.0 (Fifth Edition), Appendix F.1: “Detection Without External Encoding Information”](https://www.w3.org/TR/xml/#sec-guessing-no-ext-info)
 * [HTML Living Standard: Determining the Character Encoding](https://html.spec.whatwg.org/multipage/parsing.html#determining-the-character-encoding)
 * [Encoding Living Standard](https://encoding.spec.whatwg.org)
 * [BCP-47: Tags for Identifying Languages](https://tools.ietf.org/html/bcp47)
+* [FAQ: UTF-8, UTF-16, UTF-32 & BOM](https://unicode.org/faq/utf_bom.html)
 
 ## Coding Standards
 

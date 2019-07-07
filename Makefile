@@ -80,7 +80,10 @@ install-hooks:
 .PHONY: encode
 encode:
 	mkdir -p resources/
-	wget -O resources/character-sets.xml https://www.iana.org/assignments/character-sets/character-sets.xml
+	wget -O resources/iana-character-sets.xml https://www.iana.org/assignments/character-sets/character-sets.xml
+	wget -O resources/whatwg-encodings.json https://encoding.spec.whatwg.org/encodings.json
+	wget -O resources/icu-convrtrs.txt http://source.icu-project.org/repos/icu/icu/tags/release-58-1/source/data/mappings/convrtrs.txt
+	php tools/encode-class.php
 
 #-------------------------------------------------------------------------------
 # Documentation tasks
