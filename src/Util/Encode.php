@@ -13,7 +13,7 @@ namespace TextEncoder\Util;
 /**
  * Pulled from the IANA and WHATWG official character encoding alias lists.
  *
- * DO NOT EDIT MANUALLY. This code was automatically generated with `make encode` at 2019-07-07T20:14:55Z.
+ * DO NOT EDIT MANUALLY. This code was automatically generated with `make encode` at 2019-07-07T20:24:39Z.
  *
  * @see https://www.iana.org/assignments/character-sets/character-sets.xml
  * @see https://encoding.spec.whatwg.org/encodings.json

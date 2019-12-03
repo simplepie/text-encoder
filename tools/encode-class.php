@@ -164,6 +164,15 @@ foreach ($newRegistry as $enc) {
 }
 
 //------------------------------------------------------------------------------
+// Future improvement
+
+// foreach (UConverter::getAvailable() as $encoding) {
+//     echo '----------------------------------------------------------------------' . PHP_EOL;
+//     echo $encoding . PHP_EOL;
+//     print_r(UConverter::getAliases($encoding));
+// }
+
+//------------------------------------------------------------------------------
 
 // Customize
 $registry['ascii']   = 'US-ASCII';
@@ -179,8 +188,7 @@ foreach ($registry as $k => $v) {
 // Alphabetize the hashmap for readability
 \uksort($registry, 'strnatcasecmp');
 
-//-------------------------------------------------------------------------------
-// Entity.php
+//------------------------------------------------------------------------------
 
 $template = $twig->load('Encode.php.twig');
 $output   = $template->render([
@@ -193,3 +201,5 @@ $writePath = \sprintf(
 );
 
 \file_put_contents($writePath, $output);
+
+//------------------------------------------------------------------------------

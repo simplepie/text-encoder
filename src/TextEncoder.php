@@ -25,7 +25,7 @@ class TextEncoder implements TextEncoderInterface
      */
     public static function detectEncoding(string $detect, ?array $encodingList = null): string
     {
-        return \mb_detect_encoding($detect, $encodingList, true);
+        return \mb_detect_encoding($detect, $encodingList ?: 'UTF-8', true);
     }
 
     /**
